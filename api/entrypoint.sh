@@ -1,8 +1,8 @@
+#!/bin/bash
 
-export NODE_ENV=documentation
+export NODE_ENV=production
 
 npm run swagger-autogen
 
-npm run start-dev
+npm run start
 
-exec "$@"

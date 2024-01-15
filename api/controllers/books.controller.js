@@ -10,9 +10,10 @@ const listAllBooks = async (req, res) => {
   // #swagger.responses[500] = { description: 'Internal server error.' }
 
   try {
-    const SQL_query = `SELECT id, title, description, author, isbn, available_quantity, shelf_location
-FROM Book`;
+    const SQL_query = `SELECT id, title, description, author, isbn, available_quantity, shelf_location 
+    FROM "Book"`;
     const [data, metadata] = await sequelize.query(SQL_query);
+    // const data = await Book.findAll();
     res.status(200).json(data);
   } catch (error) {
     console.log(error);
@@ -33,7 +34,7 @@ const getBook = async (req, res) => {
   const { id } = req.params;
   try {
     const SQL_query = `SELECT id, title, description, author, isbn, available_quantity, shelf_location
-      FROM Book
+      FROM "Book"
       WHERE id = ?
       `;
 
@@ -127,7 +128,7 @@ const deleteBook = async (req, res) => {
 
   const { id } = req.params;
 
-  const SQL_query = `DELETE FROM Book
+  const SQL_query = `DELETE FROM "Book"
 WHERE id = ?
 RETURNING id, title, author, description, isbn, available_quantity, shelf_location`;
 
@@ -167,7 +168,7 @@ const searchOnBookBy = async (req, res) => {
   const conditions = queries.join(" AND ");
 
   const SQL_query = `SELECT id, title, description, author, isbn, available_quantity, shelf_location
-FROM Book
+FROM "Book"
 ${conditions.length ? "WHERE" : ""} ${conditions}`;
 
   const [data, metadata] = await sequelize.query(SQL_query, {

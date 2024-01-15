@@ -37,10 +37,10 @@ const report_borrowing_process = async (req, res) => {
   const to_date = new Date(to);
   try {
     const SQL_query = `SELECT BP.id, email, username, title, isbn, checkout_date, due_date, return_date, return_status, BP.createdAt, BP.updatedAt 
-    FROM BorrowProcessing BP
-    INNER JOIN Book B
+    FROM "BorrowProcessing" BP
+    INNER JOIN "Book" B
     ON BP.book_id = B.id
-    INNER JOIN Borrower BR
+    INNER JOIN "Borrower" BR
     ON BP.borrower_id = BR.id
     WHERE checkout_date >= ? and checkout_date <= ?;
     `;
@@ -95,10 +95,10 @@ const overdue_borrows = async (req, res) => {
 
   try {
     const SQL_query = `SELECT BP.id, email, username, title, isbn, checkout_date, due_date, return_date, return_status, BP.createdAt, BP.updatedAt 
-    FROM BorrowProcessing BP
-    INNER JOIN Book B
+    FROM "BorrowProcessing" BP
+    INNER JOIN "Book" B
     ON BP.book_id = B.id
-    INNER JOIN Borrower BR
+    INNER JOIN "Borrower" BR
     ON BP.borrower_id = BR.id
     WHERE (return_date IS NULL OR due_date <= return_date);
     `;

@@ -10,6 +10,12 @@ COPY . .
 
 EXPOSE 3000
 
+# RUN export NODE_ENV=production
+
+# RUN npm run swagger-autogen
+
+# CMD [ "npm", "run", "start" ]
+
 COPY entrypoint.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/entrypoint.sh

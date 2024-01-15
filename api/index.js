@@ -16,6 +16,8 @@ import swaggerDocument from "./services/swagger.json" assert { type: "json" };
 
 const app = express();
 
+// sequelize.sync();
+
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

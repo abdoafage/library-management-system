@@ -65,7 +65,7 @@ const login = async (req, res) => {
 
   // get borrower by sql query and will return [result:array, metadata:object]
   const [result, metadata] = await sequelize.query(
-    "SELECT id, username, email, password FROM Borrower WHERE email = ?;",
+    `SELECT id, username, email, password FROM "Borrower" WHERE email = ?;`,
     { replacements: [email] }
   );
 
@@ -149,7 +149,7 @@ const getSpecificBorrower = async (req, res) => {
 
   const { id } = req.params;
   const SQL_query = `SELECT id, username, email, password, createdAt, updatedAt 
-FROM Borrower
+FROM "Borrower"
 WHERE id = ?`;
   const [borrower, metadata] = await sequelize.query(SQL_query, {
     replacements: [id],
@@ -171,7 +171,7 @@ const getAllBorrowers = async (req, res) => {
   schema: { id:"int", username:"string", email:"string", password:"string", createdAt:"date", updatedAt:"date" }
 }*/
   const SQL_query = `SELECT id, username, email, password, createdAt, updatedAt 
-FROM Borrower`;
+FROM "Borrower"`;
   const [borrowers, metadata] = await sequelize.query(SQL_query);
   res.status(200).json(borrowers);
 };
@@ -193,7 +193,7 @@ const deleteBorrowers = async (req, res) => {
   #swagger.responses[404] = { description: 'Borrower not found.' }*/
 
   const { id } = req.params;
-  const SQL_query = `DELETE FROM Borrower
+  const SQL_query = `DELETE FROM "Borrower"
 WHERE id = ?
 RETURNING id, username, email, password, createdAt, updatedAt`;
   const [data, metadata] = await sequelize.query(SQL_query, {

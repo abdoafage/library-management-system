@@ -157,7 +157,7 @@ const listAllBorrowProcessing = async (req, res) => {
   }
   */
   const SQL_query = `SELECT id, checkout_date, due_date, return_date, return_status, createdAt, updatedAt, book_id, borrower_id
-  FROM BorrowProcessing;
+  FROM "BorrowProcessing";
   `;
   const [data] = await sequelize.query(SQL_query);
   res.status(200).json(data);
@@ -188,8 +188,8 @@ const booksBorrowedByBorrower = async (req, res) => {
   const { borrowerId } = req.params;
   try {
     const SQL_query = `SELECT title, description, author, isbn
-  FROM BorrowProcessing BP
-  INNER JOIN Book B
+  FROM "BorrowProcessing" BP
+  INNER JOIN "Book" B
   ON B.id = BP.book_id
   WHERE BP.return_status = 0 AND BP.borrower_id = ?;`;
 
@@ -232,8 +232,8 @@ const overdueDate = async (req, res) => {
   }
   */
   const SQL_query = `SELECT *
-  FROM BorrowProcessing BP
-  INNER JOIN Book B
+  FROM "BorrowProcessing" BP
+  INNER JOIN "Book" B
   ON B.id = BP.book_id
   WHERE BP.return_status = 0 AND ? >= BP.due_date;
   `;

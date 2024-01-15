@@ -5,7 +5,7 @@ import { db_env } from "./db_env.js";
 console.log(db_env[process.env.NODE_ENV]);
 
 const sequelize = new Sequelize(db_env[process.env.NODE_ENV].url, {
-  logging: false,
+  // logging: false,
 });
 
 sequelize
