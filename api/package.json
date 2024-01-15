@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "export NODE_ENV=test && mocha --timeout 60000 --reporter spec --exit",
-    "start": "export NODE_ENV=production && nodemon index.js",
+    "start": "export NODE_ENV=production && node index.js",
     "start-dev": "export NODE_ENV=development && nodemon index.js",
     "swagger-autogen": "node services/swagger.service.js"
   },

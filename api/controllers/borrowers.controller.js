@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken";
 const register = async (req, res) => {
   /*
   #swagger.tags=['Borrower']
+  #swagger.summary = 'Create a new borrower'
   #swagger.description = 'Endpoint to register a new borrower.'
    #swagger.parameters['newBorrower'] = {
       in: 'body',
@@ -45,7 +46,7 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
   /*#swagger.tags=['Borrower']
-
+  #swagger.summary='Login borrower and get a JWT access token.'
   #swagger.description = 'Endpoint to login a borrower.'
   #swagger.parameters['loginCredentials'] = {
     in: 'body',
@@ -98,7 +99,7 @@ const login = async (req, res) => {
 
 const updateBorrowerDetails = async (req, res) => {
   /*#swagger.tags=['Borrower']
-
+#swagger.summary = 'Update borrower details'
 #swagger.description = 'Endpoint to update borrower details.'
 #swagger.parameters['borrowerId'] = {
   in: 'path',
@@ -133,7 +134,7 @@ const updateBorrowerDetails = async (req, res) => {
 
 const getSpecificBorrower = async (req, res) => {
   /* #swagger.tags=['Borrower']
-
+#swagger.summary = 'Get details of a specific borrower'
 #swagger.description = 'Endpoint to get specific borrower details.'
 #swagger.parameters['borrowerId'] = {
   in: 'path',
@@ -164,7 +165,7 @@ WHERE id = ?`;
 
 const getAllBorrowers = async (req, res) => {
   /*#swagger.tags=['Borrower']
-
+#swagger.summary = 'List all borrowers'
 #swagger.description = 'Endpoint to get all borrowers.'
 #swagger.responses[200] = {
   description: 'List of all borrowers.',
@@ -178,7 +179,7 @@ FROM "Borrower"`;
 
 const deleteBorrowers = async (req, res) => {
   /* #swagger.tags=['Borrower']
-
+  #swagger.summary = 'Delete a borrower'
   #swagger.description = 'Endpoint to delete a borrower.'
   #swagger.parameters['borrowerId'] = {
     in: 'path',

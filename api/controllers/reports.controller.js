@@ -6,7 +6,7 @@ import { writeFileSync } from "fs";
 const report_borrowing_process = async (req, res) => {
   /*
   #swagger.tags=['reports']
-
+  #swagger.summary = 'show analytical reports of the borrowing process in a specific period'
   #swagger.description = 'Generate a report on borrowing processes within a specified date range.' 
   #swagger.parameters['from'] = { 
     description: 'Start date (YYYY-MM-DD) for the report.', 
@@ -82,7 +82,7 @@ const report_borrowing_process = async (req, res) => {
 const overdue_borrows = async (req, res) => {
   /*
   #swagger.tags=['reports']
-
+  #swagger.summary = 'Generate a report on overdue borrows.'
   #swagger.description = 'Generate a report on overdue borrows.' 
   #swagger.responses[200] = { 
     description: 'Successfully generated the report.', 

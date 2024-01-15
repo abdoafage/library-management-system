@@ -5,8 +5,8 @@ import { Borrower } from "../models/borrowers.model.js";
 
 const borrowBook = async (req, res) => {
   /*  #swagger.tags=['borrowProcessing']
-
     #swagger.method('get')
+    #swagger.summary = 'Borrow a book'
     #swagger.description = 'Endpoint to borrow a book by a borrower.'
 
     #swagger.parameters['borrowerId'] = { 
@@ -87,7 +87,7 @@ const borrowBook = async (req, res) => {
 
 const returnBook = async (req, res) => {
   /*#swagger.tags=['borrowProcessing']
-
+    #swagger.summary = 'Return a book.'
     #swagger.method('get')
     #swagger.description = 'Endpoint to return a borrowed book.'
 
@@ -166,7 +166,7 @@ const listAllBorrowProcessing = async (req, res) => {
 const booksBorrowedByBorrower = async (req, res) => {
   /*
   #swagger.tags=['borrowProcessing']
-
+  #swagger.summary = 'List books borrowed by a borrower.'
   #swagger.method('get')
   #swagger.description = 'Endpoint to retrieve a list of books borrowed by a specific borrower.'
 
@@ -205,8 +205,8 @@ const booksBorrowedByBorrower = async (req, res) => {
 const overdueDate = async (req, res) => {
   /*
   #swagger.tags=['borrowProcessing']
-
   #swagger.method('get')
+  #swagger.summary = 'List overdue books.'
   #swagger.description = 'Endpoint to retrieve a list of overdue books.'
 
   #swagger.responses[200] = { 

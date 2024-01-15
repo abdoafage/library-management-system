@@ -23,6 +23,7 @@
         "tags": [
           "Borrower"
         ],
+        "summary": "List all borrowers",
         "description": "Endpoint to get all borrowers.",
         "responses": {
           "200": {
@@ -71,6 +72,7 @@
         "tags": [
           "Borrower"
         ],
+        "summary": "Get details of a specific borrower",
         "description": "Endpoint to get specific borrower details.",
         "parameters": [
           {
@@ -135,6 +137,7 @@
         "tags": [
           "Borrower"
         ],
+        "summary": "Update borrower details",
         "description": "Endpoint to update borrower details.",
         "parameters": [
           {
@@ -214,6 +217,7 @@
         "tags": [
           "Borrower"
         ],
+        "summary": "Delete a borrower",
         "description": "Endpoint to delete a borrower.",
         "parameters": [
           {
@@ -280,6 +284,7 @@
         "tags": [
           "Borrower"
         ],
+        "summary": "Create a new borrower",
         "description": "Endpoint to register a new borrower.",
         "parameters": [
           {
@@ -349,6 +354,7 @@
         "tags": [
           "Borrower"
         ],
+        "summary": "Login borrower and get a JWT access token.",
         "description": "Endpoint to login a borrower.",
         "parameters": [
           {
@@ -814,6 +820,7 @@
         "tags": [
           "borrowProcessing"
         ],
+        "summary": "Borrow a book",
         "description": "Endpoint to borrow a book by a borrower.",
         "parameters": [
           {
@@ -896,6 +903,7 @@
         "tags": [
           "borrowProcessing"
         ],
+        "summary": "Return a book.",
         "description": "Endpoint to return a borrowed book.",
         "parameters": [
           {
@@ -1028,6 +1036,7 @@
         "tags": [
           "borrowProcessing"
         ],
+        "summary": "List books borrowed by a borrower.",
         "description": "Endpoint to retrieve a list of books borrowed by a specific borrower.",
         "parameters": [
           {
@@ -1077,6 +1086,7 @@
         "tags": [
           "borrowProcessing"
         ],
+        "summary": "List overdue books.",
         "description": "Endpoint to retrieve a list of overdue books.",
         "responses": {
           "200": {
@@ -1161,6 +1171,7 @@
         "tags": [
           "reports"
         ],
+        "summary": "show analytical reports of the borrowing process in a specific period",
         "description": "Generate a report on borrowing processes within a specified date range.",
         "parameters": [
           {
@@ -1245,6 +1256,7 @@
         "tags": [
           "reports"
         ],
+        "summary": "Generate a report on overdue borrows.",
         "description": "Generate a report on overdue borrows.",
         "responses": {
           "200": {
