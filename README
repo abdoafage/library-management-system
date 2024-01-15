@@ -1,0 +1,76 @@
+Objective: Design and implement a simple library management system to manage books and
+borrowers.
+
+# Functional Requirements
+
+- Books:
+  - Add a book with details like title, author, ISBN, available quantity, and shelf location.
+  - Update a book’s details.
+  - Delete a book.
+  - List all books.
+  - Search for a book by title, author, or ISBN.
+- Borrowers:
+  - Register a borrower with details like name, email, and registered date (Keep the user details as simple as possible).
+  - Update borrower’s details.
+  - Delete a borrower.
+  - List all borrowers.
+- Borrowing Process:
+  - A borrower can check out a book. The system should keep track of which books are checked out and by whom.
+  - A borrower can return a book.
+  - A borrower can check the books they currently have.
+  - The system should keep track of due dates for the books and list books that are overdue.
+
+# Non-functional Requirements
+
+1. Performance: The system should be optimized for reading operations since searching
+   and listing books/borrowers will be frequent operations.
+2. Scalability: The system design should support the addition of new features in the future,
+   like reservations or reviews.
+3. Security: Ensure that user inputs are validated to prevent SQL injection or other potential
+   security threats.
+
+# Technical Requirements
+
+1. Programming: The task shall be implemented using NodeJs.
+2. Database: Use a relational database system (e.g., PostgreSQL, MySQL).
+3. API: Implement a RESTful API to support all the above operations.
+4. Error Handling: The system should gracefully handle errors and provide meaningful feedback.
+
+---
+
+# ERD
+
+---
+
+# API Endpoints
+
+## Books
+
+- [x] `GET /api/books` : List all books
+- [x] `GET /api/books/:id` : Get details of a specific book
+- [x] `POST /api/books` : Add a new book
+- [x] `PUT /api/books/:id` : Update book details
+- [x] `DELETE /api/books/:id` : Delete a book
+- [x] `GET /api/books/search` : Search for a book by title, author, or ISBN.
+
+## Borrowers
+
+- [x] `GET /api/borrowers` : List all borrowers.
+- [x] `GET /api/borrowers/:id` : Get details of a specific borrower.
+- [x] `PUT /api/borrowers/:id` : Update borrower details.
+- [x] `DELETE /api/borrowers/:id` : Delete a borrower.
+- [x] `POST /api/borrowers/register` : Create a new borrower.
+- [x] `POST /api/borrowers/login` : Login borrower and get a JWT access token.
+
+## Borrowing Process
+
+- [x] `POST /api/borrow` : Borrow a book, The system should keep track of which books are checked out and by whom. (protected)
+- [x] `POST /api/return` : Return a book. (protected)
+- [x] `GET /api/borrowers/:id/books` : List books borrowed by a borrower.
+- [x] `GET /api/overdue-books` : List overdue books.
+
+## Analytical Reports
+
+- [ ] `GET /api/reports/borrowing-process/:period` : show analytical reports of the borrowing process in a specific period and export the borrowing process data in CSV or Xlsx sheet formats e.x.
+- [ ] `GET /api/reports/overdue-borrows/:period` : Exports all overdue borrows of the last month.
+- [ ] `GET /api/reports/all-borrows/:period` : Exports all borrowing processes of the last month

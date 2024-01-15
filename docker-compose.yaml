@@ -1,0 +1,30 @@
+networks:
+  default:
+    external:
+      name: library-management-system-network
+
+version: "3"
+services:
+  db:
+    image: postgres:14.5
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5435:5432"
+
+  api:
+    build:
+      context: .
+      dockerfile: api/dockerfile
+
+    volumes:
+      - ./app:/app
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+
+volumes:
+  postgres_data: {}

@@ -1,0 +1,1312 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Blog API Documentation",
+    "description": "Documentation",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/borrowers/": {
+      "get": {
+        "tags": [
+          "Borrower"
+        ],
+        "description": "Endpoint to get all borrowers.",
+        "responses": {
+          "200": {
+            "description": "List of all borrowers.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "example": "int"
+                },
+                "username": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "example": "date"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/borrowers/{id}": {
+      "get": {
+        "tags": [
+          "Borrower"
+        ],
+        "description": "Endpoint to get specific borrower details.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "borrowerId",
+            "in": "path",
+            "description": "ID of the borrower to retrieve details.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Borrower details retrieved successfully.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "example": "int"
+                },
+                "username": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "example": "date"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Borrower not found."
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Borrower"
+        ],
+        "description": "Endpoint to update borrower details.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "borrowerId",
+            "in": "path",
+            "description": "ID of the borrower to be updated.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "updatedDetails",
+            "in": "body",
+            "description": "Updated borrower details.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "example": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Borrower details updated successfully.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "example": "int"
+                },
+                "username": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "example": "date"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request."
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Borrower"
+        ],
+        "description": "Endpoint to delete a borrower.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "borrowerId",
+            "in": "path",
+            "description": "ID of the borrower to be deleted.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Borrower deleted successfully.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "example": "int"
+                },
+                "username": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "example": "date"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Borrower not found."
+          }
+        }
+      }
+    },
+    "/borrowers/register": {
+      "post": {
+        "tags": [
+          "Borrower"
+        ],
+        "description": "Endpoint to register a new borrower.",
+        "parameters": [
+          {
+            "name": "newBorrower",
+            "in": "body",
+            "description": "Borrower information for registration.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Borrower registration successful.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "example": "date"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Email already exists."
+          }
+        }
+      }
+    },
+    "/borrowers/login": {
+      "post": {
+        "tags": [
+          "Borrower"
+        ],
+        "description": "Endpoint to login a borrower.",
+        "parameters": [
+          {
+            "name": " ",
+            "in": "body",
+            "description": "Borrower login credentials.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Borrower login successful.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "access_token": {
+                  "type": "string",
+                  "example": "string"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Incorrect password."
+          },
+          "404": {
+            "description": "Email not found."
+          }
+        }
+      }
+    },
+    "/books/": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "List all books",
+        "description": "Retrieve a list of all books.",
+        "responses": {
+          "200": {
+            "description": "A list of books.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number",
+                    "example": 1
+                  },
+                  "title": {
+                    "type": "string",
+                    "example": "Book Title"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Book Description"
+                  },
+                  "author": {
+                    "type": "string",
+                    "example": "Author Name"
+                  },
+                  "isbn": {
+                    "type": "string",
+                    "example": "1234567890"
+                  },
+                  "available_quantity": {
+                    "type": "number",
+                    "example": 10
+                  },
+                  "shelf_location": {
+                    "type": "string",
+                    "example": "A1"
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Create a new book",
+        "description": "Create a new book.",
+        "parameters": [
+          {
+            "name": "book",
+            "in": "body",
+            "description": "Book details.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "New Book"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "Book Description"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "Author Name"
+                },
+                "isbn": {
+                  "type": "string",
+                  "example": "0987654321"
+                },
+                "available_quantity": {
+                  "type": "number",
+                  "example": 5
+                },
+                "shelf_location": {
+                  "type": "string",
+                  "example": "B2"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "The newly created book.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "example": 2
+                },
+                "title": {
+                  "type": "string",
+                  "example": "New Book"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "Book Description"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "Author Name"
+                },
+                "isbn": {
+                  "type": "string",
+                  "example": "0987654321"
+                },
+                "available_quantity": {
+                  "type": "number",
+                  "example": 5
+                },
+                "shelf_location": {
+                  "type": "string",
+                  "example": "B2"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request. Invalid input data."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      }
+    },
+    "/books/search": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Search for books based on criteria",
+        "description": "Search for books based on title, author, and/or ISBN.",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "description": "Title of the book.",
+            "type": "string"
+          },
+          {
+            "name": "author",
+            "in": "query",
+            "description": "Author of the book.",
+            "type": "string"
+          },
+          {
+            "name": "isbn",
+            "in": "query",
+            "description": "ISBN of the book.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of books that match the search criteria.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number",
+                    "example": 1
+                  },
+                  "title": {
+                    "type": "string",
+                    "example": "Book Title"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Book Description"
+                  },
+                  "author": {
+                    "type": "string",
+                    "example": "Author Name"
+                  },
+                  "isbn": {
+                    "type": "string",
+                    "example": "1234567890"
+                  },
+                  "available_quantity": {
+                    "type": "number",
+                    "example": 10
+                  },
+                  "shelf_location": {
+                    "type": "string",
+                    "example": "A1"
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      }
+    },
+    "/books/{id}": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Get a particular book by ID",
+        "description": "Retrieve a book by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "Book ID."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The book with the specified ID.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "example": 1
+                },
+                "title": {
+                  "type": "string",
+                  "example": "Book Title"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "Book Description"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "Author Name"
+                },
+                "isbn": {
+                  "type": "string",
+                  "example": "1234567890"
+                },
+                "available_quantity": {
+                  "type": "number",
+                  "example": 10
+                },
+                "shelf_location": {
+                  "type": "string",
+                  "example": "A1"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "404": {
+            "description": "Book not found."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Update a book by ID",
+        "description": "Update a book with the specified ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "Book ID."
+          },
+          {
+            "name": "book",
+            "in": "body",
+            "description": "Updated book details.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Updated Book"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "Updated Description"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "New Author"
+                },
+                "isbn": {
+                  "type": "string",
+                  "example": "1112223333"
+                },
+                "available_quantity": {
+                  "type": "number",
+                  "example": 15
+                },
+                "shelf_location": {
+                  "type": "string",
+                  "example": "C3"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book updated successfully."
+          },
+          "400": {
+            "description": "Bad request. Invalid input data."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Delete a book by ID",
+        "description": "Delete a book with the specified ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "Book ID."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The deleted book.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "example": 2
+                },
+                "title": {
+                  "type": "string",
+                  "example": "Deleted Book"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "Book Description"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "Author Name"
+                },
+                "isbn": {
+                  "type": "string",
+                  "example": "0987654321"
+                },
+                "available_quantity": {
+                  "type": "number",
+                  "example": 5
+                },
+                "shelf_location": {
+                  "type": "string",
+                  "example": "B2"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "404": {
+            "description": "Book not found."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      }
+    },
+    "/borrowProcessing/borrow/{borrowerId}/{bookId}": {
+      "get": {
+        "tags": [
+          "borrowProcessing"
+        ],
+        "description": "Endpoint to borrow a book by a borrower.",
+        "parameters": [
+          {
+            "name": "borrowerId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the borrower"
+          },
+          {
+            "name": "bookId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the book to be borrowed"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Book successfully borrowed",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "checkout_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "due_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "return_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "return_status": {
+                  "type": "string",
+                  "example": "boolen"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "book_id": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "borrower_id": {
+                  "type": "string",
+                  "example": "integer"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - This book borrowed by this borrower"
+          },
+          "404": {
+            "description": "His book is not available now."
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/borrowProcessing/return/{borrowerId}/{bookId}": {
+      "get": {
+        "tags": [
+          "borrowProcessing"
+        ],
+        "description": "Endpoint to return a borrowed book.",
+        "parameters": [
+          {
+            "name": "borrowerId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the borrower"
+          },
+          {
+            "name": "bookId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the book to be returned"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book successfully returned",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "title": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "isbn": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "available_quantity": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "shelf_location": {
+                  "type": "string",
+                  "example": "integer"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Book not borrowed by the specified borrower"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/borrowProcessing/": {
+      "get": {
+        "tags": [
+          "borrowProcessing"
+        ],
+        "summary": "List all borrow processing entries",
+        "description": "Endpoint to retrieve a list of all borrow processing entries.",
+        "responses": {
+          "200": {
+            "description": "List of all borrow processing entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "checkout_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "due_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "return_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "return_status": {
+                  "type": "string",
+                  "example": "boolen"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "book_id": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "borrower_id": {
+                  "type": "string",
+                  "example": "integer"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/borrowProcessing/borrowed/{borrowerId}": {
+      "get": {
+        "tags": [
+          "borrowProcessing"
+        ],
+        "description": "Endpoint to retrieve a list of books borrowed by a specific borrower.",
+        "parameters": [
+          {
+            "name": "borrowerId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the borrower"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of books borrowed by the specified borrower",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "isbn": {
+                  "type": "string",
+                  "example": "integer"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/borrowProcessing/overdue": {
+      "get": {
+        "tags": [
+          "borrowProcessing"
+        ],
+        "description": "Endpoint to retrieve a list of overdue books.",
+        "responses": {
+          "200": {
+            "description": "List of overdue books",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "checkout_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "due_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "return_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "return_status": {
+                  "type": "string",
+                  "example": "boolen"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "book_id": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "borrower_id": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "title": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "isbn": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "available_quantity": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "shelf_location": {
+                  "type": "string",
+                  "example": "integer"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Unable to retrieve overdue books"
+          }
+        }
+      }
+    },
+    "/reports/borrowing-process/{from}/{to}": {
+      "get": {
+        "tags": [
+          "reports"
+        ],
+        "description": "Generate a report on borrowing processes within a specified date range.",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Start date (YYYY-MM-DD) for the report."
+          },
+          {
+            "name": "to",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "End date (YYYY-MM-DD) for the report."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully generated the report.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "BorrowProcessing_id": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "username": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "title": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "isbn": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "checkout_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "due_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "return_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "return_status": {
+                  "type": "string",
+                  "example": "boolen"
+                },
+                "BorrowProcessing_createdAt": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "BorrowProcessing_updatedAt": {
+                  "type": "string",
+                  "example": "date"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/reports/overdue-borrows": {
+      "get": {
+        "tags": [
+          "reports"
+        ],
+        "description": "Generate a report on overdue borrows.",
+        "responses": {
+          "200": {
+            "description": "Successfully generated the report.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "BorrowProcessing_id": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "username": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "title": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "isbn": {
+                  "type": "string",
+                  "example": "integer"
+                },
+                "checkout_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "due_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "return_date": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "return_status": {
+                  "type": "string",
+                  "example": "boolen"
+                },
+                "BorrowProcessing_createdAt": {
+                  "type": "string",
+                  "example": "date"
+                },
+                "BorrowProcessing_updatedAt": {
+                  "type": "string",
+                  "example": "date"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
